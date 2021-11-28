@@ -64,7 +64,7 @@ def twoDimTicTacToe():
 		a=''
 		printPickBoard()
 		while len(a) != 1 or not a.isdigit() or a == '0':
-			a = input("which Case (1-9)")
+			a = input("which Case (1-9) -> ")
 		a = int(a) - 1
 		w = a % WIDTH
 		h = int(a / HEIGHT)
