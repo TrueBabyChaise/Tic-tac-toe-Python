@@ -40,7 +40,7 @@ def printPickBoard():
 
 def twoDimTicTacToe():
 	board = createTwoDimensionBoard(HEIGHT, WIDTH)
-	playerPiece = ['O', 'X', '@', 'S']
+	playerPiece = ['O', 'X']
 	actualPlayerTurn = 0
 
 	while not hasSomeoneWin(board):
