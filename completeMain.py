@@ -24,13 +24,35 @@ def hasSomeoneWin(board):
 				break
 		if not isDiff:
 			return True
+
+	if HEIGHT != WIDTH:
+		return False
+
+	isDiff = False
+	last = board[0][0]
+	for i in range(HEIGHT):
+		if board[i][i] != last or board[i][i] ==  ' ':
+			isDiff = True
+			break
+	if not isDiff:
+		return True
+
+	isDiff = False
+	last = board[0][HEIGHT - 1]
+	for i in range(HEIGHT):
+		if board[i][HEIGHT - 1 - i] != last or board[i][HEIGHT - 1 - i] ==  ' ':
+			isDiff = True
+			break
+	if not isDiff:
+		return True
+
 	return False
 
 def printPickBoard():
 	for h in range(HEIGHT):
 		print(" ", end="")
 		for w in range(WIDTH):
-			print(h * (WIDTH - 1) + w + 1,end=" ")
+			print(h * WIDTH + w + 1,end=" ")
 		print()
 
 def twoDimTicTacToe():
