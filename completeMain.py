@@ -1,5 +1,5 @@
-HEIGHT = 3
-WIDTH = 3
+HEIGHT = 5
+WIDTH = 5
 NB_PLAYER = 2
 TWODIM = True
 
@@ -63,8 +63,11 @@ def twoDimTicTacToe():
 	while not hasSomeoneWin(board):
 		a=''
 		printPickBoard()
-		while len(a) != 1 or not a.isdigit() or a == '0':
+		while not a.isdigit() or a == '0':
 			a = input("which Case (1-9) -> ")
+			if a.isdigit():
+				if int(a) > (HEIGHT * WIDTH):
+					a = ''
 		a = int(a) - 1
 		w = a % WIDTH
 		h = int(a / HEIGHT)
