@@ -1,7 +1,6 @@
 HEIGHT = 3
 WIDTH = 3
 NB_PLAYER = 2
-TWODIM = True
 
 def hasSomeoneWin(board):
 
@@ -35,12 +34,9 @@ def hasSomeoneWin(board):
 	return False
 
 def printPickBoard():
-	print(" 1  2  3")
-	print(" 4  5  6")
-	print(" 7  8  9")
-
-def oneDimTicTacToe():
-	print("Not implemented")
+	print(" 1 2 3")
+	print(" 4 5 6")
+	print(" 7 8 9")
 
 def twoDimTicTacToe():
 	board = createTwoDimensionBoard(HEIGHT, WIDTH)
@@ -59,14 +55,15 @@ def twoDimTicTacToe():
 			actualPlayerTurn -= 1
 			continue
 		board[h][w] = playerPiece[actualPlayerTurn]
-		print(*board, sep='\n')
+		for row in board:
+			print(" ", end="")
+			print(*row, sep=" ")
 		actualPlayerTurn += 1
 		if actualPlayerTurn >= NB_PLAYER:
 			actualPlayerTurn = 0
 
 def main():
-	if TWODIM:
-		twoDimTicTacToe()
+	twoDimTicTacToe()
 	print("Game Done")
 	
 
