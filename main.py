@@ -6,6 +6,7 @@ def hasSomeoneWin(board):
 
 	# NEED TO CHECK ONLY FIVE BECAUSE CORNER CAN'T BE 3 ALIGNED
 	# IT'S SHADDY BUT I CAN'T FIND A SOLUTION WIHTOUT A CLASS BEING INVOLVED
+	# ACTUALLY YOU CAN BUT IT'S COMPLEX I THINK
 
 	# LEFT VERTICAL LINE
 	if board[0][0] != ' ' and board[1][0] != ' ' and board[2][0] != ' ':
@@ -73,14 +74,9 @@ def twoDimTicTacToe():
 def main():
 	twoDimTicTacToe()
 	print("Game Done")
-	
 
 def createTwoDimensionBoard(height=3, width=3):
 	return [[' ' for i in range(width)] for j in range(height)]
-
-# I'M NOT USING IT TOO COMPLEX
-def createOneDimensionBoard(height=3, width=3):
-	return [' ' for i in range(width * height)]
 
 if __name__ == '__main__':
 	main()
